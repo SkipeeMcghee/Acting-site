@@ -1,24 +1,29 @@
+/* Global styles */
 * {
     font-family: Helvetica, Arial, sans-serif;
     background-color: #121212;
-    color:rgb(255, 255, 255, 0.87);
+    color: rgb(255, 255, 255, 0.87);
     text-align: center;
-} 
+}
 
+/* Image styling */
 img {
     width: 30rem;
 }
-    
-p{
+
+/* Paragraph styling */
+p {
     font-size: 18px;
     list-style-type: none;
 }
 
+/* Navigation styling */
 nav {
     display: flex;
     justify-content: left;
 }
 
+/* Anchor tag styling */
 a {
     cursor: pointer;
     border-radius: 5px;
@@ -30,24 +35,61 @@ a {
     box-shadow: 0px 2px;
 }
 
+/* Anchor tag hover effect */
 a:hover {
-    background-color:rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 2px rgb(255, 255, 255);
-    color:#000000;
+    color: #000000;
     transition: background-color .4s, color .4s;
-  
 }
 
-iframe {
-    margin: 5rem;
-}
-  
+/* Anchor tag active effect */
 a:active {
     position: relative; /* Add relative positioning */
     top: 3px; /* Move the active link down by 3 pixels */
     box-shadow: 0px 2px; /* Reset box shadow to original */
 }
 
+/* Resume link styling */
 a.resume {
     margin-bottom: 5rem;
+}
+
+iframe {
+    margin: 5rem;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 600px) {
+    /* Center header text */
+    header {
+        text-align: center;
+    }
+
+    /* Center navigation links */
+    nav {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    /* Make image responsive */
+    img {
+        width: 100%;
+        max-width: 30rem; /* Limit image size */
+        height: auto;
+    }
+
+    /* Center resume link */
+    a.resume {
+        display: block;
+        margin: 1rem auto;
+    }
+
+    /* Make video responsive */
+    iframe {
+        width: 100%;
+        max-width: 800px; /* Limit video size */
+        height: auto;
+        margin: 1rem auto; /* Center video */
+    }
 }
