@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Actor's Name] - Official Website</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Brian Heise</h1>
+  </header>
+
+  <nav>
+    <a class="button" href=index.html>About Me</a>
+    <a class="button" href=gallery.html>Gallery</a>
+    <a class="button" href=reel.html>Reel</a>
+    <a class="button" href=contact.html>Contact</a>
+  </nav>
+
+    <main>
+    <div class="image-container">
+        <img id="highres-image" src="" alt="High-Resolution Image">
+        <p id="image-description"></p>
+    </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+          const params = new URLSearchParams(window.location.search);
+          const imgSrc = params.get('src');
+          const imgAlt = params.get('alt');
+          if (imgSrc) {
+              document.getElementById('highres-image').src = imgSrc;
+          }
+          if (imgAlt) {
+              document.getElementById('highres-image').alt = imgAlt;
+              document.getElementById('image-description').innerText = imgAlt;
+          }
+      });
+  </script>
+  
+</body>
+</html>
