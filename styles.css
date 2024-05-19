@@ -21,6 +21,7 @@ p {
 nav {
     display: flex;
     justify-content: left;
+    padding-bottom: 1rem;
 }
 
 /* Anchor tag styling */
@@ -119,15 +120,20 @@ iframe {
 }
 
 #highres-image {
-    position: center;
-    padding-top: 10px;
-    top: 0;
-    left: 0;
-    width: 60vmax;
-    object-fit: cover;
+    max-width: 100%; /* Reduce the maximum width to make it smaller */
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is centered */
+    margin: 0 auto; /* Center the image horizontally */
+    max-height: 100vh; /* Limit the height of the image */
 }
 
+
+
 #image-description {
-    font-size: 12 rem;
+    font-size: 0.9rem; /* Adjust the font size */
     color: aliceblue;
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Add some space between image and description */
 }

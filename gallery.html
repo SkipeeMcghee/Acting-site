@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Actor's Name] - Official Website</title>
+  <title>Brian Heise - Gallery</title>
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 
   <header>
-    <h1>Brian Heise</h1>
+    <h1>Gallery</h1>
   </header>
 
   <nav>
     <a class="button" href=index.html>About Me</a>
     <a class="button" href=gallery.html>Gallery</a>
-    <a class="button" href=reel.html>Reel</a>
+    <a class="button" href=reel.html>Reels</a>
     <a class="button" href=contact.html>Contact</a>
   </nav>
 
   <div class="gallery">
-    <a href="highres.html?src=/resources/images/Headshot2.PNG" target="_blank"><img src="/resources/images/Headshot2.PNG" alt=""></a>
-    <a href="highres.html?src=/resources/images/Headshot1.PNG" target="_blank"><img src="/resources/images/Headshot1.PNG" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/POM1.jpg&alt=A Princess of Mars" target="_blank"><img src="/resources/images/POM1.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/POM2.jpg&alt=A Princess of Mars" target="_blank"><img src="/resources/images/POM2.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/POM3.jpg&alt=A Princess of Mars" target="_blank"><img src="/resources/images/POM3.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/POM4.jpg&alt=A Princess of Mars" target="_blank"><img src="/resources/images/POM4.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/DR1.jpg&alt=The Dining Room" target="_blank"><img src="/resources/images/DR1.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/DR2.jpg&alt=The Dining Room" target="_blank"><img src="/resources/images/DR2.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/GWS1.jpg&alt=Get Well Soon, a punk act" target="_blank"><img src="/resources/images/GWS1.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/GWS2.jpg&alt=Get Well Soon, a punk act" target="_blank"><img src="/resources/images/GWS2.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/T1.jpg&alt=Tarzan: The Musical" target="_blank"><img src="/resources/images/T1.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/T2.jpg&alt=Tarzan: The Musical" target="_blank"><img src="/resources/images/T2.jpg" alt="Headshot"></a>
-    <a href="highres.html?src=/resources/images/T3.jpg&alt=Tarzan: The Musical" target="_blank"><img src="/resources/images/T3.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/Headshot2.PNG"><img src="/resources/images/Headshot2.PNG" alt=""></a>
+    <a href="highres.html?src=/resources/images/Headshot1.PNG"><img src="/resources/images/Headshot1.PNG" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/GWS1.jpg&alt=Here I am performing 'Gives You Hell' as part of Get Well Soon, a punk cover act"><img src="/resources/images/GWS1.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/GWS2.jpg&alt=We were booked to cover All American Rejects at an event called 'Emo Night'"><img src="/resources/images/GWS2.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/T4.jpg&alt=I was the lead role of Adult Tarzan in my school's production of Tarzan: The Musical"><img src="/resources/images/T4.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/T3.jpg&alt=The Cast of Tarzan: The Musical"><img src="/resources/images/T3.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/T1.jpg&alt=The Crew of Tarzan: The Musical, and some cast members"><img src="/resources/images/T1.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/T2.jpg&alt=An audience member from Tarzan: The Musical"><img src="/resources/images/T2.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/DR1.jpg&alt=The Dining Room"><img src="/resources/images/DR1.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/POM1.jpg&alt=Me as Than Kosis with the actor for Sab Than putting on makeup for 'A Princess of Mars'"><img src="/resources/images/POM1.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/POM2.jpg&alt=A Princess of Mars: after a performance."><img src="/resources/images/POM2.jpg" alt="Headshot"></a>
+    <a href="highres.html?src=/resources/images/POM3.jpg&alt=A Group photo of the red alien cast of 'A Princess of Mars'"><img src="/resources/images/POM3.jpg" alt="Headshot"></a>
+    <!--<a href="highres.html?src=/resources/images/POM4.jpg&alt=A Princess of Mars"><img src="/resources/images/POM4.jpg" alt="Headshot"></a>-->
   </div>
 
   <main>
@@ -44,17 +44,19 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
-        const params = new URLSearchParams(window.location.search);
-        const imgSrc = params.get('src');
-        const imgAlt = params.get('alt');
-        if (imgSrc) {
-            document.getElementById('highres-image').src = imgSrc;
-        }
-        if (imgAlt) {
-            document.getElementById('highres-image').alt = imgAlt;
-            document.getElementById('image-description').innerText = imgAlt;
-        }
-    });
+    const params = new URLSearchParams(window.location.search);
+    const imgSrc = params.get('src');
+    const imgAlt = params.get('alt');
+    
+    if (imgSrc) {
+        document.getElementById('highres-image').src = imgSrc;
+        document.getElementById('image-description').innerText = imgAlt || '';
+        document.querySelector('.image-container').style.display = 'block';
+    } else {
+        document.querySelector('.image-container').style.display = 'none';
+    }
+});
+
   </script>
   
 </body>
